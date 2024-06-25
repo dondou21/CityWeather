@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CityWeather Home</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+
+<body>
+    <header>
+        <h1>CityWeather</h1>
+        <p>What Time For Today</p>
+    </header>
+
+    <main>
+        <section id="search">
+            <h2>Get The Weather</h2>
+            <form action="/weather" id="weather-form" method="GET">
+                <input type="text" name="city" id="city" placeholder="Enter city name", required>
+                <button type="submit">Search</button>
+            </form>
+        </section>
+
+        <section>
+            <h2>Weather Details</h2>
+            <div id="weather-display">
+
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 CityWeather. All rights reserved.</p>
+    </footer>
+    
+</body>
+</html>
