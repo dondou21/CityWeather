@@ -1,12 +1,12 @@
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, render_template, request, jsonify
 from flask_sqlalchemy import SQLAlchemy
+from weather import get_weather
+import os
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///weather.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
-
-# Model creation
 
 class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -16,7 +16,7 @@ class User(db.Model):
 
     def __repr__(self):
         return f"User('{self.username}', '{self.email}')"
-    
+
 @app.route('/')
 @app.route('/home')
 def home():
@@ -57,6 +57,15 @@ def user_delete(id):
     
     return render_template('user/delete.html', user=user)
 
+@app.route('/weather', methods=['GET'])
+def get_weather_data():
+    city_name = request.args.get('city', 'Kigali')
+    weather_data = get_weather(city_name)
+    
+    if weather_data:
+        return jsonify(weather_data)
+    else:
+        return jsonify({'error': 'City not found'}), 404
 
 if __name__ == '__main__':
     app.run(debug=True)
