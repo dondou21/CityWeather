@@ -3,36 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CityWeather Home</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>CityWeather</title>
 </head>
-
 <body>
     <header>
         <h1>CityWeather</h1>
-        <p>What Time For Today</p>
+        <p>What News About The Time</p>
     </header>
 
     <main>
+        <div class="image-container">
+            <img src="{{ url_for('static', filename='images/logo.png') }}" alt="CityWeather Image">
+        </div>
         <section id="search">
             <h2>Get The Weather</h2>
-            <form action="/weather" id="weather-form" method="GET">
-                <input type="text" name="city" id="city" placeholder="Enter city name", required>
+            <form id="weather-form">
+                <input type="text" name="city" id="city" placeholder="Enter city name" required>
                 <button type="submit">Search</button>
             </form>
         </section>
 
-        <section>
-            <h2>Weather Details</h2>
-            <div id="weather-display">
+        <div class="error" id="error-message" style="display: none;"></div>
 
-            </div>
+        <section id="weather">
+            <h2>Weather in <span id="weather-city"></span></h2>
+            <ul>
+                <li class="weather-item">Temperature: <span id="weather-temperature"></span>°C</li>
+                <li class="weather-item">Pressure: <span id="weather-pressure"></span> hPa</li>
+                <li class="weather-item">Humidity: <span id="weather-humidity"></span>%</li>
+                <li class="weather-item">Wind Speed: <span id="weather-wind"></span> m/s</li>
+                <li class="weather-item">Condition: <span id="weather-condition"></span></li>
+                <li class="weather-item">Description: <span id="weather-desc"></span></li>
+            </ul>
         </section>
     </main>
 
-    <footer>
-        <p>&copy; 2024 CityWeather. All rights reserved.</p>
-    </footer>
-    
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
 </body>
 </html>
