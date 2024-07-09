@@ -82,10 +82,20 @@ ul {
 }
 
 .weather-item {
-    margin-bottom: 10px;
+    margin-bottom: 25px;
     display: flex;
     align-items: center;
+    
 }
+
+.weather-value {
+    font-weight: bold;
+    font-size: larger;
+    color: blue;
+    margin-left: 25px;
+    margin-right: 10px;
+}
+
 
 .weather-item img {
     vertical-align: middle;
