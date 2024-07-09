@@ -7,7 +7,7 @@ document.getElementById('weather-form').addEventListener('submit', function(e) {
             if (data.error) {
                 document.getElementById('error-message').innerText = data.error;
                 document.getElementById('error-message').style.display = 'block';
-                document.getElementById('weather').style.display = 'none';
+                document.getElementById('weather-details').style.display = 'none';
             } else {
                 document.getElementById('error-message').style.display = 'none';
                 document.getElementById('weather-city').innerText = city;
@@ -17,12 +17,12 @@ document.getElementById('weather-form').addEventListener('submit', function(e) {
                 document.getElementById('weather-wind').innerText = data.wind;
                 document.getElementById('weather-condition').innerText = data.condition;
                 document.getElementById('weather-desc').innerText = data.desc;
-                document.getElementById('weather').style.display = 'block';
+                document.getElementById('weather-details').style.display = 'block';
             }
         })
         .catch(error => {
-            document.getElementById('error-message').innerText = 'An error occurred. Please try again.';
+            
             document.getElementById('error-message').style.display = 'block';
-            document.getElementById('weather').style.display = 'none';
+            document.getElementById('weather-details').style.display = 'none';
         });
 });
