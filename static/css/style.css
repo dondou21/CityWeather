@@ -73,6 +73,45 @@ button:hover {
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
+#search {
+    margin: 20px 0;
+}
+
+#weather-details {
+    margin: 20px 0;
+}
+
+#weather-details p {
+    font-size: 1.2em;
+    margin: 10px 0;
+}
+
+#weather-details i {
+    margin-right: 10px;
+}
+
+
+#weather ul {
+    list-style: none;
+    padding: 0;
+}
+
+.weather-item {
+    display: flex;
+    align-items: center;
+    margin: 0.5em 0;
+}
+
+.weather-item img {
+    margin-right: 10px;
+    width: 24px;
+    height: 24px;
+}
+#error-message {
+    color: red;
+    font-size: 1.2em;
+}
+
 footer {
     background: #333;
     color: white;
