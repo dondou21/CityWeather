@@ -39,19 +39,30 @@ header p {
     margin-bottom: 20px;
 }
 
-button {
+#weather-form {
+    margin: 20px 0;
+}
+
+#weather-form input[type="text"] {
+    width: 300px;
+    padding: 10px;
+    font-size: 1.2em;
+    margin-right: 10px;
+}
+
+#weather-form button {
     padding: 10px 20px;
-    font-size: 16px;
-    background: #4CAF50;
+    font-size: 1.2em;
+    background-color: #4CAF50;
     color: white;
     border: none;
     cursor: pointer;
+    border-radius: 5px;
 }
 
-button:hover {
-    background: turquoise;
+#weather-form button:hover {
+    background-color: #0484ce;
 }
-
 .city-input {
     margin-bottom: 10px;
 }
@@ -90,7 +101,7 @@ ul {
 
 .weather-value {
     font-weight: bold;
-    font-size: larger;
+    font-size: xx-large;
     color: blue;
     margin-left: 25px;
     margin-right: 10px;
